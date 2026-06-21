@@ -1,2 +1,5 @@
 /Application
 /Application/*
+.htaccess
+.user.ini
+php.ini
