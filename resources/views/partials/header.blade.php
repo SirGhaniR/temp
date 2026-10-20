@@ -1,7 +1,7 @@
 <header class="sticky top-0 z-40 border-b border-border/60 bg-ink/70">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
     <a class="flex items-center gap-2" href="{{ route('home') }}">
-      <img class="h-20 w-auto" src="{{ asset('images/logo.png') }}" alt="PPLG">
+      <img class="h-10 w-auto" src="{{ asset('images/logo.png') }}" alt="PPLG">
     </a>
 
     <nav class="hidden items-center gap-8 text-sm md:flex">
@@ -11,7 +11,7 @@
       <a class="nav-link" href="#project">Project</a>
     </nav>
 
-    <a class="hidden rounded-lg border border-border px-4 py-2 text-xs font-medium text-white transition hover:border-white/40 md:inline-block"
+    <a class="hidden rounded-md border border-border px-4 py-2 text-xs font-medium text-white transition hover:border-white/40 md:inline-block"
       href="#get-started">
       Join now
     </a>
