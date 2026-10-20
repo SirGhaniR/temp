@@ -1,4 +1,4 @@
-<section class="relative overflow-hidden min-h-300 bg-cover bg-center bg-no-repeat" id="get-started"
+<section class="relative overflow-hidden min-h-150 bg-cover bg-center bg-no-repeat md:min-h-200 lg:min-h-300" id="get-started"
   style="background-image: url('{{ asset('images/bg-top.png') }}');">
     <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-24 md:grid-cols-2 md:py-32">
       <div>
@@ -15,7 +15,7 @@
         <form class="mt-8 flex max-w-md gap-3" action="{{ route('join.store') }}" method="POST">
           @csrf
           <input class="hidden" name="website" type="text" aria-hidden="true" tabindex="-1" autocomplete="off">
-          <input class="form-input" name="email" type="email" value="{{ old('email') }}" required
+          <input class="form-input backdrop-blur-lg" name="email" type="email" value="{{ old('email') }}" required
             placeholder="Enter your email">
           <button class="btn-primary whitespace-nowrap" type="submit">Join!</button>
         </form>
