@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             scrollTrigger: {
                 trigger: section,
                 start: "top 65%",
-                end: "bottom 90%",
+                end: "bottom 100%",
                 scrub: 0.6,
             },
         });

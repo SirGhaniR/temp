@@ -20,6 +20,11 @@ class TimelineCardSeeder extends Seeder
             ['step' => 2, 'headline' => 'Headline', 'description' => null, 'link' => null, 'order' => 1],
             ['step' => 2, 'headline' => 'Headline', 'description' => null, 'link' => null, 'order' => 2],
             ['step' => 2, 'headline' => 'Headline', 'description' => null, 'link' => null, 'order' => 3],
+
+            // deploy section
+            ['step' => 3, 'headline' => 'Headline', 'description' => null, 'link' => null, 'order' => 1],
+            ['step' => 3, 'headline' => 'Headline', 'description' => null, 'link' => null, 'order' => 2],
+            ['step' => 3, 'headline' => 'Headline', 'description' => null, 'link' => null, 'order' => 3],
         ];
 
         foreach ($rows as $row) {
