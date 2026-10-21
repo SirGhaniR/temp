@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
             StatSeeder::class,
             WhyChooseCardSeeder::class,
             CurriculumItemSeeder::class,
+            TimelineCardSeeder::class,
         ]);
     }
 }
