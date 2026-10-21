@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CurriculumItemController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\StatController;
 use App\Http\Controllers\Admin\WhyChooseCardController;
@@ -26,6 +27,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/why-choose', [WhyChooseCardController::class, 'index'])->name('why-choose.index');
         Route::get('/why-choose/{whyChoose}/edit', [WhyChooseCardController::class, 'edit'])->name('why-choose.edit');
         Route::post('/why-choose/{whyChoose}', [WhyChooseCardController::class, 'update'])->name('why-choose.update');
+
+        Route::get('/curriculum', [CurriculumItemController::class, 'index'])->name('curriculum.index');
+        Route::get('/curriculum/{curriculum}/edit', [CurriculumItemController::class, 'edit'])->name('curriculum.edit');
+        Route::post('/curriculum/{curriculum}', [CurriculumItemController::class, 'update'])->name('curriculum.update');
     });
 });
 

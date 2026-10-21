@@ -19,9 +19,14 @@
       <p class="mt-1 text-xs text-muted">Edit</p>
     </a>
 
+    <a class="surface-card p-6 transition hover:border-white/30" href="{{ route('admin.curriculum.index') }}">
+      <p class="text-xs uppercase tracking-widest text-muted">Web / Mobile / Game</p>
+      <p class="mt-2 text-lg font-medium text-white">Curriculum</p>
+      <p class="mt-1 text-xs text-muted">Edit</p>
+    </a>
+
     @php
       $disabled = [
-          ['label' => 'Curriculum', 'hint' => 'Web / Mobile / Game'],
           ['label' => 'Timeline', 'hint' => 'Project cards across 3 steps'],
           ['label' => 'Partners', 'hint' => 'Partnership grid'],
       ];
