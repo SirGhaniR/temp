@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CurriculumItemController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\StatController;
 use App\Http\Controllers\Admin\TimelineCardController;
 use App\Http\Controllers\Admin\WhyChooseCardController;
@@ -38,6 +39,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/timeline/{timeline}/edit', [TimelineCardController::class, 'edit'])->name('timeline.edit');
         Route::post('/timeline/{timeline}', [TimelineCardController::class, 'update'])->name('timeline.update');
         Route::delete('/timeline/{timeline}', [TimelineCardController::class, 'destroy'])->name('timeline.destroy');
+
+        Route::get('/partners', [PartnerController::class, 'index'])->name('partners.index');
+        Route::post('/partners', [PartnerController::class, 'store'])->name('partners.store');
+        Route::get('/partners/{partner}/edit', [PartnerController::class, 'edit'])->name('partners.edit');
+        Route::post('/partners/{partner}', [PartnerController::class, 'update'])->name('partners.update');
+        Route::delete('/partners/{partner}', [PartnerController::class, 'destroy'])->name('partners.destroy');
     });
 });
 
