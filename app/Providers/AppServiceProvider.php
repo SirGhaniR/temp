@@ -2,23 +2,23 @@
 
 namespace App\Providers;
 
+use App\Models\Stat;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
         //
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
-        //
+        View::composer(['home', 'sections.*'], function ($view) {
+            $view->with([
+                'stats' => Stat::orderBy('order')->get(),
+            ]);
+        });
     }
 }
