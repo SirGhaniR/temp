@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\StatController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JoinController;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,10 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('index');
+
+        Route::get('/stats', [StatController::class, 'index'])->name('stats.index');
+        Route::get('/stats/{stat}/edit', [StatController::class, 'edit'])->name('stats.edit');
+        Route::post('/stats/{stat}', [StatController::class, 'update'])->name('stats.update');
     });
 });
 
