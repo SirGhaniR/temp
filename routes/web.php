@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CurriculumItemController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\StatController;
+use App\Http\Controllers\Admin\TimelineCardController;
 use App\Http\Controllers\Admin\WhyChooseCardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JoinController;
@@ -31,6 +32,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/curriculum', [CurriculumItemController::class, 'index'])->name('curriculum.index');
         Route::get('/curriculum/{curriculum}/edit', [CurriculumItemController::class, 'edit'])->name('curriculum.edit');
         Route::post('/curriculum/{curriculum}', [CurriculumItemController::class, 'update'])->name('curriculum.update');
+
+        Route::get('/timeline', [TimelineCardController::class, 'index'])->name('timeline.index');
+        Route::post('/timeline', [TimelineCardController::class, 'store'])->name('timeline.store');
+        Route::get('/timeline/{timeline}/edit', [TimelineCardController::class, 'edit'])->name('timeline.edit');
+        Route::post('/timeline/{timeline}', [TimelineCardController::class, 'update'])->name('timeline.update');
+        Route::delete('/timeline/{timeline}', [TimelineCardController::class, 'destroy'])->name('timeline.destroy');
     });
 });
 

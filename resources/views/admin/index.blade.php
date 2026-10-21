@@ -25,19 +25,16 @@
       <p class="mt-1 text-xs text-muted">Edit</p>
     </a>
 
-    @php
-      $disabled = [
-          ['label' => 'Timeline', 'hint' => 'Project cards across 3 steps'],
-          ['label' => 'Partners', 'hint' => 'Partnership grid'],
-      ];
-    @endphp
+    <a class="surface-card p-6 transition hover:border-white/30" href="{{ route('admin.timeline.index') }}">
+      <p class="text-xs uppercase tracking-widest text-muted">Project cards across 3 steps</p>
+      <p class="mt-2 text-lg font-medium text-white">Timeline</p>
+      <p class="mt-1 text-xs text-muted">Edit</p>
+    </a>
 
-    @foreach ($disabled as $section)
-      <div class="surface-card p-6 opacity-60">
-        <p class="text-xs uppercase tracking-widest text-muted">{{ $section['hint'] }}</p>
-        <p class="mt-2 text-lg font-medium text-white">{{ $section['label'] }}</p>
-        <p class="mt-1 text-xs text-muted">Coming in the next batch</p>
-      </div>
-    @endforeach
+    <div class="surface-card p-6 opacity-60">
+      <p class="text-xs uppercase tracking-widest text-muted">Partnership grid</p>
+      <p class="mt-2 text-lg font-medium text-white">Partners</p>
+      <p class="mt-1 text-xs text-muted">Coming in the next batch</p>
+    </div>
   </div>
 @endsection
