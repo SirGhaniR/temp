@@ -13,9 +13,14 @@
       <p class="mt-1 text-xs text-muted">Edit</p>
     </a>
 
+    <a class="surface-card p-6 transition hover:border-white/30" href="{{ route('admin.why-choose.index') }}">
+      <p class="text-xs uppercase tracking-widest text-muted">3 feature cards</p>
+      <p class="mt-2 text-lg font-medium text-white">Why Choose</p>
+      <p class="mt-1 text-xs text-muted">Edit</p>
+    </a>
+
     @php
       $disabled = [
-          ['label' => 'Why Choose', 'hint' => '3 feature cards'],
           ['label' => 'Curriculum', 'hint' => 'Web / Mobile / Game'],
           ['label' => 'Timeline', 'hint' => 'Project cards across 3 steps'],
           ['label' => 'Partners', 'hint' => 'Partnership grid'],

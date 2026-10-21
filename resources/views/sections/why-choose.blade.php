@@ -11,28 +11,12 @@
     </div>
 
     <div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-      <div class="surface-card p-8 transition hover:border-white/20">
-        <h3 class="text-sm font-semibold text-white">AI-Driven &amp; Industry-Aligned Curriculum</h3>
-        <p class="mt-3 text-xs leading-relaxed text-muted">
-          Learn the latest technologies relevant to today's startup landscape, from web development to artificial
-          intelligence.
-        </p>
-      </div>
-
-      <div class="surface-card p-8 transition hover:border-white/20">
-        <h3 class="text-sm font-semibold text-white">Developer-Standard Lab Facilities</h3>
-        <p class="mt-3 text-xs leading-relaxed text-muted">
-          Get hands-on experience using high-spec computers, high-speed internet, and a comfortable workspace.
-        </p>
-      </div>
-
-      <div class="surface-card p-8 transition hover:border-white/20">
-        <h3 class="text-sm font-semibold text-white">Practitioner Mentors &amp; Certifications</h3>
-        <p class="mt-3 text-xs leading-relaxed text-muted">
-          Receive direct guidance from experienced instructors and industry practitioners who will help you build a
-          professional portfolio while still in school.
-        </p>
-      </div>
+      @foreach ($whyChooseCards as $card)
+        <div class="surface-card p-8 transition hover:border-white/20">
+          <h3 class="text-sm font-semibold text-white">{{ $card->title }}</h3>
+          <p class="mt-3 text-xs leading-relaxed text-muted">{{ $card->description }}</p>
+        </div>
+      @endforeach
     </div>
   </div>
 </section>

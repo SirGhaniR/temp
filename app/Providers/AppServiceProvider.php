@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Stat;
+use App\Models\WhyChooseCard;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -18,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer(['home', 'sections.*'], function ($view) {
             $view->with([
                 'stats' => Stat::orderBy('order')->get(),
+                'whyChooseCards' => WhyChooseCard::orderBy('order')->get(),
             ]);
         });
     }
