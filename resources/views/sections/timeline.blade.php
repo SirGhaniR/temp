@@ -19,7 +19,7 @@
       <svg class="pointer-events-none absolute inset-0 h-full w-full text-white/80 hidden md:block" aria-hidden="true"
         viewBox="0 0 1000 1600" preserveAspectRatio="none" fill="none">
         <path data-timeline-path
-          d="M 350 50 C 700 50, 950 200, 950 400 C 950 600, 700 700, 500 700 C 300 700, 50 800, 50 1000 C 50 1200, 400 1350, 900 1500"
+          d="M 350 50 C 700 50, 950 200, 950 400 C 950 600, 700 700, 500 700 C 300 700, 50 800, 50 1000 C 50 1200, 100 1350, 780 1500"
           stroke="currentColor" stroke-width="4" stroke-linecap="round" />
       </svg>
 
@@ -34,27 +34,18 @@
 
       <div class="relative mt-8 mb-24">
         <div class="relative grid grid-cols-1 gap-4 md:grid-cols-4 md:items-start">
-          <div class="surface-card bg-white min-h-45 p-6 opacity-0 md:mt-0" data-timeline-card>
-            <p class="text-xs font-medium text-black">Headline</p>
-          </div>
-          <div class="surface-card bg-white min-h-45 p-6 opacity-0 md:mt-15" data-timeline-card>
-            <p class="text-xs font-medium text-black">Headline</p>
-          </div>
-          <div class="surface-card bg-white min-h-45 p-6 opacity-0 md:mt-30" data-timeline-card>
-            <p class="text-xs font-medium text-black">Headline</p>
-          </div>
-          <div class="surface-card bg-white min-h-45 p-6 opacity-0 md:mt-45" data-timeline-card>
-            <p class="text-xs font-medium text-black">Headline</p>
-          </div>
+          @foreach ($timelineCards[1] ?? [] as $i => $card)
+            @include('sections.timeline-card', ['card' => $card, 'index' => $i])
+          @endforeach
         </div>
       </div>
 
-      <div class="relative flex flex-col items-center justify-center text-center my-16 md:my-24">
+      <div class="relative flex flex-col items-center justify-center text-center my-8 md:my-12">
         <p class="text-sm font-medium text-white">New to coding?</p>
         <p class="mt-2 text-xs text-muted">Don't worry, we have guides for complete beginners!</p>
       </div>
 
-      <div class="relative mt-8 flex flex-col items-center justify-center text-center">
+      <div class="relative flex flex-col items-center justify-center text-center">
         <div class="opacity-0" data-timeline-number>
           <p class="text-2xl font-semibold text-white">2. Deploy</p>
           <p class="mt-2 text-xs text-muted">Get it out into the world.</p>
@@ -63,15 +54,9 @@
 
       <div class="relative mt-12 mb-24">
         <div class="relative grid grid-cols-1 gap-4 md:grid-cols-3 md:items-start">
-          <div class="surface-card bg-white min-h-45 p-6 opacity-0 md:mt-0" data-timeline-card>
-            <p class="text-xs font-medium text-black">Headline</p>
-          </div>
-          <div class="surface-card bg-white min-h-45 p-6 opacity-0 md:mt-15" data-timeline-card>
-            <p class="text-xs font-medium text-black">Headline</p>
-          </div>
-          <div class="surface-card bg-white min-h-45 p-6 opacity-0 md:mt-30" data-timeline-card>
-            <p class="text-xs font-medium text-black">Headline</p>
-          </div>
+          @foreach ($timelineCards[2] ?? [] as $i => $card)
+            @include('sections.timeline-card', ['card' => $card, 'index' => $i])
+          @endforeach
         </div>
       </div>
 
@@ -79,6 +64,14 @@
         <div class="opacity-0" data-timeline-number>
           <p class="text-2xl font-semibold text-white">3. Achievements</p>
           <p class="mt-2 text-xs text-muted">Collect your digital trophies.</p>
+        </div>
+      </div>
+
+      <div class="relative mt-12 mb-24">
+        <div class="relative grid grid-cols-1 gap-4 md:grid-cols-3 md:items-start">
+          @foreach ($timelineCards[3] ?? [] as $i => $card)
+            @include('sections.timeline-card', ['card' => $card, 'index' => $i])
+          @endforeach
         </div>
       </div>
 

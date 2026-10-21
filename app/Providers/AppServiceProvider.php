@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\CurriculumItem;
 use App\Models\Stat;
+use App\Models\TimelineCard;
 use App\Models\WhyChooseCard;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -22,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
                 'stats' => Stat::orderBy('order')->get(),
                 'whyChooseCards' => WhyChooseCard::orderBy('order')->get(),
                 'curriculumItems' => CurriculumItem::orderBy('order')->get(),
+                'timelineCards' => TimelineCard::orderBy('order')->get()->groupBy('step'),
             ]);
         });
     }
