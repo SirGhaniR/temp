@@ -1,4 +1,5 @@
-
+import './counters';
+import './timeline';
 
 import Alpine from 'alpinejs';
 
