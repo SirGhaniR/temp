@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
             WhyChooseCardSeeder::class,
             CurriculumItemSeeder::class,
             TimelineCardSeeder::class,
+            PartnerSeeder::class,
         ]);
     }
 }
