@@ -71,7 +71,7 @@
       @endif
 
       <input
-        class="block w-full cursor-pointer rounded-xs border border-border bg-white/2 text-sm text-muted file:mr-3 file:cursor-pointer file:border-0 file:bg-white file:p-3 file:text-sm file:font-medium file:text-black hover:file:opacity-90"
+        class="block w-full cursor-pointer rounded-sm border border-border bg-white/2 text-md text-muted file:mr-3 file:cursor-pointer file:border-0 file:bg-white file:p-3 file:text-md file:font-medium file:text-black hover:file:opacity-90"
         id="image" name="image" type="file" accept="image/*">
 
       @if ($card->image_path)

@@ -31,10 +31,10 @@
       <p class="mt-1 text-xs text-muted">Edit</p>
     </a>
 
-    <div class="surface-card p-6 opacity-60">
+    <a class="surface-card p-6 transition hover:border-white/30" href="{{ route('admin.partners.index') }}">
       <p class="text-xs uppercase tracking-widest text-muted">Partnership grid</p>
       <p class="mt-2 text-lg font-medium text-white">Partners</p>
-      <p class="mt-1 text-xs text-muted">Coming in the next batch</p>
-    </div>
+      <p class="mt-1 text-xs text-muted">Edit</p>
+    </a>
   </div>
 @endsection
