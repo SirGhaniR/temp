@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\CurriculumItem;
 use App\Models\Stat;
 use App\Models\WhyChooseCard;
 use Illuminate\Support\Facades\View;
@@ -20,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with([
                 'stats' => Stat::orderBy('order')->get(),
                 'whyChooseCards' => WhyChooseCard::orderBy('order')->get(),
+                'curriculumItems' => CurriculumItem::orderBy('order')->get(),
             ]);
         });
     }
