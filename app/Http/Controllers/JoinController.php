@@ -12,7 +12,7 @@ class JoinController extends Controller
 {
     public function store(Request $request): RedirectResponse
     {
-        // Honeypot (a hidden field that would prevent bots from attacking)
+        // Honeypot (catch bots that fills all fields, including hidden one)
         if ($request->filled('website')) {
             return redirect()->route('home');
         }
@@ -21,13 +21,13 @@ class JoinController extends Controller
             'email' => ['required', 'email:rfc,dns', 'max:254'],
         ]);
 
-        $signup = Signup::create([
-            'email' => $validated['email'],
-            'ip_address' => $request->ip(),
-        ]);
+        $signup = Signup::firstOrCreate(
+            ['email' => $validated['email']],
+            ['ip_address' => $request->ip()],
+        );
 
         $admin = config('mail.admin_address');
-        if ($admin) {
+        if ($signup->wasRecentlyCreated && $admin) {
             Mail::to($admin)->queue(new SignupReceived($signup));
         }
 
